@@ -1,7 +1,7 @@
 {
-  "name": "mvp-starter",
+  "name": "note-App",
   "version": "1.0.0",
-  "description": "just a starter repo for the MVP project",
+  "description": "note App project",
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack --mode development --watch",
@@ -21,7 +21,6 @@
   "dependencies": {
     "axios": "^0.21.0",
     "express": "^4.15.0",
-    "jquery": "^3.1.1",
     "mongoose": "^6.8.4",
     "mysql2": "^3.0.1",
     "react": "17.0.2",
