@@ -1,22 +1,22 @@
 const connection = require("../index.js")
 
-const selectAll=()=>{
-    sql= "SELECT * FROM notes"
-    return connection.query(sql)
+const selectAll=(id)=>{
+   const  sql= "SELECT * FROM notes where users_idusers=?"
+    return connection.query(sql,[id])
 }
 
-const addOne = (title,content)=>{
-  sql = "INSERT into notes (title,content) values (?,?) "
-   return connection.query(sql,[title,content])
+const addOne = (title,content,users_idusers)=>{
+ const  sql = "INSERT into notes (title,content,users_idusers) values (?,?,?) "
+   return connection.query(sql,[title,content,users_idusers])
 }
 
 const deleteO= (id)=>{
-  sql="DELETE FROM notes WHERE idnotes=?"
+const   sql="DELETE FROM notes WHERE idnotes=?"
   return connection.query(sql,[id])
 }
 
 const update =(title,content,id)=>{
-sql="UPDATE notes SET title=?,content=? WHERE idnotes =?"
+const sql="UPDATE notes SET title=?,content=? WHERE idnotes =?"
 return connection.query(sql,[title,content,id])
 }
 
