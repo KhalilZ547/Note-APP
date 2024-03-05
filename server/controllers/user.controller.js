@@ -19,11 +19,12 @@ const login = async (req, res) => {
     }
 
     const results = await model.loginUser(userName, password);
+    console.log(results);
     if (results.length === 0) {
       return res.status(401).json(results);
     }
-
-    res.status(200).json({ message: 'Login successful' });
+    
+    res.status(200).json(results[0][0].idusers);
   } catch (error) {
     console.error(error);
     res.status(500).json(error);
