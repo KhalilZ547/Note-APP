@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const noteController = require("../controllers/note.controller");
 
-
-
-router.get("/", noteController.select);
-router.post("/",noteController.add)
+router.get("/:id", noteController.select);
+router.post("/:id",noteController.add)
 router.delete("/:id",noteController.deleteOne)
 router.put("/:id",noteController.updateOne)
 
