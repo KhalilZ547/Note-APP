@@ -13,8 +13,6 @@ app.use(express.static(__dirname + "/../client/dist"));
 app.use("/api/notes", noteRoutes);
 app.use("/api/users",userRoutes)
 
-
-
 app.listen(PORT,()=>{
   console.log(`listening on port : ${PORT}`);
 });
