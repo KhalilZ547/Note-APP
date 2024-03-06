@@ -23,14 +23,9 @@ const NotesList = (props) => {
  }
 
   const handleDeleteNote = (noteId) => {
-    axios.delete(`http://localhost:3000/api/notes/${noteId}`)
+    axios.delete(`http://localhost:3000/api/notes/${props.noteId}`)
     .then((response) => {
-      const updatedNotes = [];
-      for (const note of notes) {
-        if (note.id !== noteId) {
-          updatedNotes.push(note);
-        }
-      }
+      fetchNotes()
       setNotes(updatedNotes);
     })
     .catch((error) => {
@@ -40,7 +35,7 @@ const NotesList = (props) => {
   const handleAddNote = () => {
     axios.post(`http://localhost:3000/api/notes/${props.id}`,{title,content} )
     .then((response) => {
-      fetchNotes()
+     setNotes([...notes,response.data])
       setShowAddNote(false);
       setTitle('');
       setContent('');
