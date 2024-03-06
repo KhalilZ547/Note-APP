@@ -31,7 +31,7 @@ const login = async (req, res) => {
   }
 };
 
-const addUser = async (req, res) => {
+const signup = async (req, res) => {
   try {
     const userName = req.body.userName;
     const password = req.body.password;
@@ -63,4 +63,4 @@ const updateUser = async (req, res) => {
     res.status(404).send(error);
   }
 };
- module.exports={login,selectU,addUser,deleteUser,updateUser}
+ module.exports={login,selectU,signup,deleteUser,updateUser}
