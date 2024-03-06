@@ -4,6 +4,7 @@ const selectAll=()=>{
   const sql= "SELECT * FROM users"
   return connection.query(sql)
 }
+
 const loginUser = async (userName, password) => {
   const sql = 'SELECT * FROM users WHERE userName = ? AND password = ?';
   const results= await connection.query(sql, [userName, password]);
