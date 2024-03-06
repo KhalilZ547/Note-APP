@@ -1,7 +1,7 @@
 const express = require("express");
 const noteRoutes = require('./routes/note.routes.js')
 const userRoutes = require('./routes/user.routes.js')
-// const db = require('./database-mysql');
+const cors = require ('cors')
 
 
 const app = express();
@@ -12,6 +12,7 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 app.use("/api/notes", noteRoutes);
 app.use("/api/users",userRoutes)
+app.use (cors());
 
 app.listen(PORT,()=>{
   console.log(`listening on port : ${PORT}`);
